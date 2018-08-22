@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using vaultsharp;
 using vaultsharp.native;
 
-namespace GUISendToKindle
+namespace SendToKindle
 {
     public partial class AuthForm : Form
     {
@@ -37,9 +37,6 @@ namespace GUISendToKindle
 
             WindowsCredentialManager.WriteCredentials("SendToKindleMail", kindleMail, mail, (int) CredentialPersistence.LocalMachine);
             WindowsCredentialManager.WriteCredentials("SendToKindleAuthMail", mail, password, (int) CredentialPersistence.LocalMachine);
-
-            // WindowsCredentialManager.WriteCredentials("TestMail", kindleMail, mail, (int) CredentialPersistence.LocalMachine);
-            // WindowsCredentialManager.WriteCredentials("TestAuthMail", mail, password, (int) CredentialPersistence.LocalMachine);
 
             this.Close();
         }

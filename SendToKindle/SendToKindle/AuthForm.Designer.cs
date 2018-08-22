@@ -1,4 +1,4 @@
-﻿namespace GUISendToKindle
+﻿namespace SendToKindle
 {
     partial class AuthForm
     {
@@ -80,7 +80,7 @@
             // 
             this.mail.AutoSize = true;
             this.mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mail.Location = new System.Drawing.Point(13, 112);
+            this.mail.Location = new System.Drawing.Point(13, 116);
             this.mail.Name = "mail";
             this.mail.Size = new System.Drawing.Size(46, 15);
             this.mail.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             this.kindleMail.AutoSize = true;
             this.kindleMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kindleMail.Location = new System.Drawing.Point(13, 80);
+            this.kindleMail.Location = new System.Drawing.Point(13, 85);
             this.kindleMail.Name = "kindleMail";
             this.kindleMail.Size = new System.Drawing.Size(84, 15);
             this.kindleMail.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             this.password.AutoSize = true;
             this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.Location = new System.Drawing.Point(13, 140);
+            this.password.Location = new System.Drawing.Point(13, 145);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(64, 15);
             this.password.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             // mailTextBox
             // 
-            this.mailTextBox.Location = new System.Drawing.Point(113, 112);
+            this.mailTextBox.Location = new System.Drawing.Point(113, 111);
             this.mailTextBox.Name = "mailTextBox";
             this.mailTextBox.Size = new System.Drawing.Size(206, 20);
             this.mailTextBox.TabIndex = 3;
