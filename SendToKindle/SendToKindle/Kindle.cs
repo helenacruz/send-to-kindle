@@ -19,7 +19,7 @@ namespace SendToKindle
         private SmtpClient SmtpServer;
 
         private List<string> attachments;
-        private List<string> PDFattachments;
+        private List<string> pdfAttachments;
 
         public Mail(string kindle, string auth, string pw)
         {
@@ -35,7 +35,7 @@ namespace SendToKindle
                 SmtpServer.EnableSsl = true;
 
                 attachments = new List<string>();
-                PDFattachments = new List<string>();
+                pdfAttachments = new List<string>();
                 mail = null;
             }
             catch (Exception e)
@@ -81,22 +81,23 @@ namespace SendToKindle
 
         public void AddPDFFile(string name)
         {
-            if (!PDFattachments.Contains(name))
+            if (!pdfAttachments.Contains(name))
             {
-                PDFattachments.Add(name);
+                pdfAttachments.Add(name);
             }
         }
 
         private void CheckLimits(List<string> files, string subject)
         {
             var toSend = new List<string>();
-            var totalSize = 0;
+            var totalSize = 0L;
             var attachs = 0;
 
-            foreach (string file in files)
+            foreach (var file in files)
             {
-                FileInfo f = new FileInfo(file);
+                var f = new FileInfo(file);
                 var fileSize = f.Length;
+
                 if (fileSize > maxSize)
                 {
                     Console.WriteLine(file + " is too big to send. Maximum size is 25MB.");
@@ -104,12 +105,12 @@ namespace SendToKindle
                 else if (totalSize + fileSize < maxSize && attachs < maxAttachments)
                 {
                     toSend.Add(file);
-                    totalSize += (int) fileSize;
+                    totalSize += fileSize;
                     attachs++;
                 }
                 else
                 {
-                    totalSize = (int) fileSize;
+                    totalSize = fileSize;
                     attachs = 1;
                     SendMail(subject, toSend);
                     toSend.Clear();
@@ -131,10 +132,10 @@ namespace SendToKindle
                 Console.WriteLine("Done.");
             }
 
-            if (PDFattachments.Count != 0)
+            if (pdfAttachments.Count != 0)
             {
                 Console.WriteLine("Sending .pdf files...");
-                CheckLimits(PDFattachments, "convert");
+                CheckLimits(pdfAttachments, "convert");
                 Console.WriteLine("Done.");
             }
         }

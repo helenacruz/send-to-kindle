@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUISendToKindle.Properties
+namespace SendToKindle.Properties
 {
 
 
