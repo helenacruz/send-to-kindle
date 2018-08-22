@@ -1,6 +1,6 @@
 # Send To Kindle
 
-Sent To Kindle is a Windows application for sending .epubs, .mobis and .pdfs to your kindle using its e-mail. I've been lazy so it doesn't have a fancy command line interface (yet). It requires [Calibre](https://calibre-ebook.com/) for converting the .epubs and uses Windows Credential Management to save your e-mails and password. Send To Kindle also has a really crappy user interface for the authentication. 
+Sent To Kindle is a Windows application for sending .epubs, .mobis and .pdfs to your kindle using its e-mail. I've been lazy so it doesn't have a fancy command line interface (yet). It requires [Calibre](https://calibre-ebook.com/) for converting the .epubs and uses Windows Credential Manager to save your e-mails and password. It uses the (Credential Management)[https://www.nuget.org/packages/CredentialManagement/] and (vaultmanager)[https://github.com/Bhaal22/vaultmanager] to interface with WCM. Send To Kindle also has a really crappy user interface for the authentication. 
 
 ## How to use
 
@@ -41,3 +41,5 @@ When using for the first time, it will request your e-mails and passwords. I swe
 ![alt text](https://github.com/helenacruz/SendToKindle/blob/master/images/auth.png "autho")
 
 That's all that is to it. I really, really wanted an easy way to send books to my Kindle and it might be useful for you. It's not exhaustively tested, of course, so if you find something wrong just let me know and I'll take a look. 
+
+:cactus::cactus::cactus:
