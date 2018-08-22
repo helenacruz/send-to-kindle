@@ -13,7 +13,7 @@ It receives only one argument, which can be either a folder or a file.
 For PDFs, you have two options: either send PDFs as PDFs or use Amazon to convert them to .mobi. By sending an e-mail with the subject "convert" to your Send To Kindle e-mail, Amazon converts the PDFs before sending them.
 
 If you don't want to convert your PDF files, comment `mail.AddPDFFile(file);` on the following code snippet and uncomment `//mail.AddFile(file);`.
-If you want Amazon to convert your PDF files, leave as is with `mail.AddPDFFile(file);` uncommented and `//mail.AddFile(file);` commented.
+If you want Amazon to convert your PDF files, leave as is with `mail.AddPDFFile(file);` uncommented and `//mail.AddFile(file);` commented. This code is in the `Kindle.cs` file.
 
 ```
     else if (extension == ".pdf")
