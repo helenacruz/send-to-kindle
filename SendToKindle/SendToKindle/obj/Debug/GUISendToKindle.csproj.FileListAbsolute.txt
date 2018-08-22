@@ -1,0 +1,13 @@
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\bin\Debug\GUISendToKindle.exe.config
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\bin\Debug\GUISendToKindle.exe
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\bin\Debug\GUISendToKindle.pdb
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\obj\Debug\GUISendToKindle.csprojAssemblyReference.cache
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\obj\Debug\GUISendToKindle.AuthForm.resources
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\obj\Debug\GUISendToKindle.Properties.Resources.resources
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\obj\Debug\GUISendToKindle.csproj.GenerateResource.cache
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\obj\Debug\GUISendToKindle.csproj.CoreCompileInputs.cache
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\obj\Debug\GUISendToKindle.exe
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\obj\Debug\GUISendToKindle.pdb
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\bin\Debug\CredentialManagement.dll
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\bin\Debug\libvaultmanager.dll
+C:\Users\helcr\source\repos\GUISendToKindle\GUISendToKindle\obj\Debug\GUISendToKindle.csproj.CopyComplete
