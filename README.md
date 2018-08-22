@@ -42,4 +42,6 @@ When using for the first time, it will request your e-mails and passwords. I swe
 
 That's all that is to it. I really, really wanted an easy way to send books to my Kindle and it might be useful for you. It's not exhaustively tested, of course, so if you find something wrong just let me know and I'll take a look. 
 
+PS: I also have a Python script that does the same thing without the context menu feature [here](https://github.com/helenacruz/awesome-scripts), it's CLI only. Does not use WCM (maybe in the future) but it doesn't make you install VS. 
+
 :cactus::cactus::cactus:
