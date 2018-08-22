@@ -74,7 +74,10 @@ namespace SendToKindle
 
         public void AddFile(string name)
         {
-            attachments.Add(name);
+            if (!attachments.Contains(name))
+            {
+                attachments.Add(name);
+            }
         }
 
         public void AddPDFFile(string name)
