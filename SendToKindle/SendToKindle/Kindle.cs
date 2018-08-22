@@ -57,15 +57,14 @@ namespace SendToKindle
 
         private void AddAttachment(string name)
         {
-            Attachment attachment;
-            attachment = new Attachment(name);
+            var attachment = new Attachment(name);
             mail.Attachments.Add(attachment);
         }
 
         private void SendMail(string subject, List<string> files)
         {
             CreateMail(subject);
-            foreach (string file in files)
+            foreach (var file in files)
             {
                 AddAttachment(file);
             }
@@ -82,14 +81,18 @@ namespace SendToKindle
 
         public void AddPDFFile(string name)
         {
-            PDFattachments.Add(name);
+            if (!PDFattachments.Contains(name))
+            {
+                PDFattachments.Add(name);
+            }
         }
 
         private void CheckLimits(List<string> files, string subject)
         {
-            List<string> toSend = new List<string>();
-            long totalSize = 0;
+            var toSend = new List<string>();
+            var totalSize = 0;
             var attachs = 0;
+
             foreach (string file in files)
             {
                 FileInfo f = new FileInfo(file);
@@ -101,12 +104,12 @@ namespace SendToKindle
                 else if (totalSize + fileSize < maxSize && attachs < maxAttachments)
                 {
                     toSend.Add(file);
-                    totalSize += fileSize;
+                    totalSize += (int) fileSize;
                     attachs++;
                 }
                 else
                 {
-                    totalSize = fileSize;
+                    totalSize = (int) fileSize;
                     attachs = 1;
                     SendMail(subject, toSend);
                     toSend.Clear();
@@ -148,7 +151,8 @@ namespace SendToKindle
 
         public void SendFiles(string file)
         {
-            FileAttributes attr = File.GetAttributes(file);
+            var attr = File.GetAttributes(file);
+
             try
             {
                 if (attr.HasFlag(FileAttributes.Directory))
@@ -159,7 +163,7 @@ namespace SendToKindle
                 else
                 {
                     Console.WriteLine("Sending file: " + file + ".");
-                    Process process = SendFile(file);
+                    var process = SendFile(file);
                     if (process != null)
                     {
                         process.WaitForExit();
@@ -181,13 +185,13 @@ namespace SendToKindle
         //      &view=netframework-4.7.2#System_IO_Directory_GetFiles_System_String_
         public void SendFilesDirectory(string dir)
         {
-            List<Process> processes = new List<Process>();
+            var processes = new List<Process>();
 
             // Process the list of files found in the directory.
-            string[] files = Directory.GetFiles(dir);
-            foreach (string file in files)
+            var files = Directory.GetFiles(dir);
+            foreach (var file in files)
             {
-                Process process = SendFile(Path.GetFullPath(file));
+                var process = SendFile(Path.GetFullPath(file));
                 if (process != null)
                 {
                     processes.Add(process);
@@ -195,13 +199,13 @@ namespace SendToKindle
             }
 
             // Recurse into subdirectories of this directory.
-            string[] subDirectories = Directory.GetDirectories(dir);
-            foreach (string subDirectory in subDirectories)
+            var subDirectories = Directory.GetDirectories(dir);
+            foreach (var subDirectory in subDirectories)
             {
                 SendFilesDirectory(subDirectory);
             }
 
-            foreach (Process process in processes)
+            foreach (var process in processes)
             {
                 process.WaitForExit();
             }
@@ -226,8 +230,8 @@ namespace SendToKindle
                 {
                     try
                     {
-                        Process process = new Process();
-                        ProcessStartInfo startInfo = new ProcessStartInfo();
+                        var process = new Process();
+                        var startInfo = new ProcessStartInfo();
                         startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                         startInfo.FileName = "cmd.exe";
                         startInfo.Arguments = "/c ebook-convert \"" + file + "\" \"" + mobi + "\"";

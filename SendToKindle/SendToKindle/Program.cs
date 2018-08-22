@@ -54,16 +54,12 @@ namespace SendToKindle
 
         static void Run(string[] args)
         {
-            string kindleMail;
-            string mail;
-            string password;
-
             var cred = WindowsCredentialManager.ReadCredential("SendToKindleMail");
-            kindleMail = cred.UserName;
+            var kindleMail = cred.UserName;
 
             cred = WindowsCredentialManager.ReadCredential("SendToKindleAuthMail");
-            mail = cred.UserName;
-            password = cred.GetSecret(data => Encoding.Unicode.GetString(data));
+            var mail = cred.UserName;
+            var password = cred.GetSecret(data => Encoding.Unicode.GetString(data));
 
             if (args.Length == 0)
             {
