@@ -1,6 +1,6 @@
 # Send To Kindle
 
-Sent To Kindle is a Windows application for sending .epubs, .mobis and .pdfs to your kindle using its e-mail. I've been lazy so it doesn't have a fancy command line interface (yet). It requires [Calibre](https://calibre-ebook.com/) for converting the .epubs and uses Windows Credential Manager to save your e-mails and password. It uses the [Credential Management](https://www.nuget.org/packages/CredentialManagement/) and [vaultmanager](https://github.com/Bhaal22/vaultmanager) to interface with WCM. Send To Kindle also has a really crappy user interface for the authentication. 
+Sent To Kindle is a Windows application for sending .epubs, .mobis and .pdfs to your kindle using its e-mail. It requires [Calibre](https://calibre-ebook.com/) for converting .epubs and uses Windows Credential Manager to save your e-mails and password. StK uses the [Credential Management](https://www.nuget.org/packages/CredentialManagement/) and [vaultmanager](https://github.com/Bhaal22/vaultmanager) to interface with WCM. Send To Kindle also has a really crappy graphical interface for the authentication. 
 
 ## How to use
 
@@ -36,7 +36,7 @@ You can also send all the files inside a folder (and all the files inside the fo
 
 This is the boring way to use this application though, you can just add it to your context menu. The `context.reg` file contains the entries to add Send To Kindle to your context menu of PDFs, .epubs and .mobis, you just need to fix the path (don't forget to escape the backslashes!).
 
-When using for the first time, it will request your e-mails and passwords. I swear I don't use them for anything else but I recommend the creation of an e-mail just for the purpose. To authenticate, you'll see the following window:
+When using for the first time, it will request your e-mails and password. I swear I don't use them for anything else but I recommend the creation of an e-mail just for the purpose. To authenticate, you'll see the following amazing window:
 
 ![alt text](https://github.com/helenacruz/SendToKindle/blob/master/images/auth.png "autho")
 
