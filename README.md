@@ -1,6 +1,6 @@
-# Send To Kindle
+# Send to Kindle
 
-Sent To Kindle is a Windows application for sending .epubs, .mobis and .pdfs to your kindle using its e-mail. It requires [Calibre](https://calibre-ebook.com/) for converting .epubs and uses Windows Credential Manager to save your e-mails and password. StK uses the [Credential Management](https://www.nuget.org/packages/CredentialManagement/) and [vaultmanager](https://github.com/Bhaal22/vaultmanager) to interface with WCM. Send To Kindle also has a really crappy graphical interface for the authentication. 
+Send to Kindle is a Windows application for sending .epubs, .mobis and .pdfs to your kindle using its e-mail. It requires [Calibre](https://calibre-ebook.com/) for converting .epubs and uses Windows Credential Manager to save your e-mails and password. StK uses the [Credential Management](https://www.nuget.org/packages/CredentialManagement/) and [vaultmanager](https://github.com/Bhaal22/vaultmanager) to interface with WCM. Send To Kindle also has a really crappy graphical interface for the authentication. 
 
 ## How to use
 
