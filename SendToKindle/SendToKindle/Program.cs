@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using System.Windows.Forms;
-using vaultsharp;
 
 namespace SendToKindle
 {
@@ -39,14 +38,14 @@ namespace SendToKindle
 
         static bool CheckCredentials()
         {
-            try
-            {
-                var cred = WindowsCredentialManager.ReadCredential("SendToKindleMail");
-                cred = WindowsCredentialManager.ReadCredential("SendToKindleAuthMail");
+            var credentialKindle = PasswordManager.GetCredential("SendToKindleMail");
+            var credentialAuth = PasswordManager.GetCredential("SendToKindleAuthMail");
 
+            if (credentialKindle.Exists() && credentialAuth.Exists())
+            {
                 return true;
             }
-            catch (Exception)
+            else
             {
                 return false;
             }
@@ -54,12 +53,12 @@ namespace SendToKindle
 
         static void Run(string[] args)
         {
-            var cred = WindowsCredentialManager.ReadCredential("SendToKindleMail");
-            var kindleMail = cred.UserName;
+            var credential = PasswordManager.GetCredential("SendToKindleMail");
+            var kindleMail = credential.Username;
 
-            cred = WindowsCredentialManager.ReadCredential("SendToKindleAuthMail");
-            var mail = cred.UserName;
-            var password = cred.GetSecret(data => Encoding.Unicode.GetString(data));
+            credential = PasswordManager.GetCredential("SendToKindleAuthMail");
+            var mail = credential.Username;
+            var password = credential.Password; // unsafe! use a disposable password
 
             if (args.Length == 0)
             {

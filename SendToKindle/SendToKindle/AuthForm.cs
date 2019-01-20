@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using vaultsharp;
-using vaultsharp.native;
 
 namespace SendToKindle
 {
@@ -32,11 +30,11 @@ namespace SendToKindle
             }
 
             var kindleMail = kindleMailTextBox.Text;
-            var mail = mailTextBox.Text; 
+            var mail = mailTextBox.Text;
             var password = passwordTextBox.Text;
 
-            WindowsCredentialManager.WriteCredentials("SendToKindleMail", kindleMail, mail, (int) CredentialPersistence.LocalMachine);
-            WindowsCredentialManager.WriteCredentials("SendToKindleAuthMail", mail, password, (int) CredentialPersistence.LocalMachine);
+            PasswordManager.SaveCredential("SendToKindleMail", kindleMail, mail);
+            PasswordManager.SaveCredential("SendToKindleAuthMail", mail, password);
 
             this.Close();
         }

@@ -41,7 +41,6 @@ namespace SendToKindle
             catch (Exception e)
             {
                 Console.WriteLine("Error authenticating. Exiting now.");
-                // Console.ReadKey();
                 Environment.Exit(0);
             }
         }
@@ -177,7 +176,6 @@ namespace SendToKindle
             {
                 Console.WriteLine("Invalid file: " + file + ".");
                 Console.WriteLine(e);
-                // Console.ReadKey();
                 Environment.Exit(0);
             }
         }
